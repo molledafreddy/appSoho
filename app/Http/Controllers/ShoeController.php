@@ -20,6 +20,15 @@ class ShoeController extends ApiController
 
         $shoes = Shoe::search($search)->orderBy($orderBy, $type)->where('status', true)->paginate($perPage);
 
+        return response()->json(
+            [
+                'status' => 'ok',
+                'data'   => $shoes,
+            ],
+            200
+        )->header('Content-Type', 'application/json')
+            ->header('charset', 'utf-8');
+
         return $this->showAll($shoes);
     }
 
