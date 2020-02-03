@@ -25,8 +25,7 @@ class ShoeController extends ApiController
                 'status' => 'ok',
                 'data'   => $shoes,
             ],
-            200, [
-        'Access-Control-Allow-Origin' => 'http://localhost']
+            200
         )
         ->header('Content-Type', 'application/json')
             ->header('charset', 'utf-8');
