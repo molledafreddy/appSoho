@@ -115,7 +115,7 @@ class ResetPasswordController extends ApiController
 
     public function successResponse()
     {
-        return $this->showOne('The email to reset the password was sent successfully.', 200);
+        return response()->json(['message' => 'The email to reset the password was sent successfully.'], 200);
     }//end successResponse()
 
 
@@ -178,7 +178,7 @@ class ResetPasswordController extends ApiController
 
         $this->getPasswordResetTabletRow($request)->delete();
 
-        return $this->showOne('Password changed successfully.', 200);
+        return response()->json(['message' => 'The email to reset the password was sent successfully.'], 200);
 
     }//end changePassword()
 

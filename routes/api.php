@@ -20,6 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
  *Shoe 
  */
 Route::post('login', 'AuthController@login');
+Route::post('logout', 'AuthController@logout');
 Route::post('register', 'API\UserController@register');
 
 Route::post('reset-password', 'ResetPasswordController@resetPassword');
