@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Validator;
-use Lcobucci\JWT\Parser;
 use Carbon\Carbon;
 use DB;
 
