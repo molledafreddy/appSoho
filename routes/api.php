@@ -32,7 +32,7 @@ Route::get('shoes', 'ShoeController@index');
 Route::get('shoes/{shoe}', 'ShoeController@show');
 Route::post('shoes', 'ShoeController@store');
 Route::put('shoes/{shoe}', 'ShoeController@update');
-Route::delete('shoes/{id}', 'ShoeController@destroy');
+Route::delete('shoes/{shoe}', 'ShoeController@destroy');
 
 // Route::resource('shoes', 'ShoeController');
 Route::group(
