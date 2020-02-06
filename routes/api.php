@@ -27,7 +27,7 @@ Route::post('call-reset-password', 'ResetPasswordController@callResetPassword');
 
 Route::get('list/shoes','ShoeController@getShoes');
 
-        Route::resource('shoes', 'ShoeController');
+Route::resource('shoes', 'ShoeController');
 Route::group(
     ['middleware' => 'auth:api', 'cors'],
     function () {
