@@ -26,7 +26,7 @@ class ShoeController extends ApiController
     public function getShoes()
     {
 
-        $shoes = Shoe::all();
+        $shoes = Shoe::all()->take(14);
 
         return $this->showAll($shoes);
     }
