@@ -76,7 +76,6 @@ class ShoeController extends ApiController
 
     public function update(Request $request, Shoe $shoe)
     {
-        dd($request->all());
         $messages = [
             'name.required'      => 'The Name is required.',
             'color.required'     => 'The Color is required.',
