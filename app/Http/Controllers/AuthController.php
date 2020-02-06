@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Validator;
 use Lcobucci\JWT\Parser;
 use Carbon\Carbon;
+use DB;
 
 class AuthController extends Controller
 {
@@ -37,21 +38,12 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
-        $request->user()->token()->revoke();
-        return response()->json([
-            'message' => 'Successfully logged out'
-        ]);
+        auth()->user()->tokens->each(function ($token, $key) {
+            $token->delete();
+        });
+        
+        return response()->json('Logged out successfully', 200);
 
-        // dd($request->user());
-        // $request->user()->token()->revoke();
-        // $value = $request->token;
-        // $id = (new \Parser())->parse($value)->getHeader('jti');
-        // dd($value);
-        // $token = $request->user()->tokens->find($id);
-        // $token->revoke();
-
-        // return response()->json(['message' => 
-        //     'Successfully logged out']);
     }
 
 
