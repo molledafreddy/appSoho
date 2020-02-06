@@ -114,7 +114,7 @@ class ShoeController extends ApiController
         return $this->showOne($shoe, 201);
     }
 
-    public function delete(Shoe $shoe)
+    public function destroy(Shoe $shoe)
     {
         $shoe->delete();
 
