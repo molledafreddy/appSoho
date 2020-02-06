@@ -31,7 +31,7 @@ Route::get('list/shoes','ShoeController@getShoes');
 Route::get('shoes', 'ShoeController@index');
 Route::get('shoes/{shoe}', 'ShoeController@show');
 Route::post('shoes', 'ShoeController@store');
-Route::put('shoes{id}', 'ShoeController@update');
+Route::put('shoes/{shoe}', 'ShoeController@update');
 Route::delete('shoes/{id}', 'ShoeController@destroy');
 
 // Route::resource('shoes', 'ShoeController');
