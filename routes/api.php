@@ -27,17 +27,14 @@ Route::post('call-reset-password', 'ResetPasswordController@callResetPassword');
 
 Route::get('list/shoes','ShoeController@getShoes');
 
-
-Route::get('shoes', 'ShoeController@index');
-Route::get('shoes/{shoe}', 'ShoeController@show');
-Route::post('shoes', 'ShoeController@store');
-Route::put('shoes/{shoe}', 'ShoeController@update');
-Route::delete('shoes/{shoe}', 'ShoeController@destroy');
-
-// Route::resource('shoes', 'ShoeController');
 Route::group(
     ['middleware' => 'auth:api', 'cors'],
     function () {
+        Route::get('shoes', 'ShoeController@index');
+        Route::get('shoes/{shoe}', 'ShoeController@show');
+        Route::post('shoes', 'ShoeController@store');
+        Route::put('shoes/{shoe}', 'ShoeController@update');
+        Route::delete('shoes/{shoe}', 'ShoeController@destroy');
         Route::post('logout', 'AuthController@logout');
     }
 );

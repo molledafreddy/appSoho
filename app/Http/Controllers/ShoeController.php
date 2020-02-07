@@ -81,7 +81,7 @@ class ShoeController extends ApiController
             'color.required'     => 'The Color is required.',
             'size.required'      => 'The Size is required.',
             'price.required'     => 'The Price is required.',
-            'size.numer'         => 'the data must be numbered.'
+            'size.numeric'         => 'the data must be numbered.'
         ];
 
         $validator = \Validator::make(
