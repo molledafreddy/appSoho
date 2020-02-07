@@ -147,7 +147,7 @@ class ShoeControllerUnitTest extends TestCase
     public function testDeleteSuccessfull()
     {
         $this->be($this->user);
-        $response = $this->controller->delete($this->shoe);
+        $response = $this->controller->destroy($this->shoe);
 
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertSoftDeleted('shoes', ['id' => json_decode($response->getContent())->data->id]);

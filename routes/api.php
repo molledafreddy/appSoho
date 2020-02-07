@@ -13,9 +13,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
 /**
  *Shoe 
  */
@@ -36,6 +33,11 @@ Route::delete('shoes/{shoe}', 'ShoeController@destroy');
 Route::group(
     ['middleware' => 'auth:api', 'cors'],
     function () {
+        // Route::get('shoes', 'ShoeController@index');
+        // Route::get('shoes/{shoe}', 'ShoeController@show');
+        // Route::post('shoes', 'ShoeController@store');
+        // Route::put('shoes/{shoe}', 'ShoeController@update');
+        // Route::delete('shoes/{shoe}', 'ShoeController@destroy');
         Route::post('logout', 'AuthController@logout');
     }
 );

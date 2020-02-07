@@ -68,7 +68,6 @@ class ShoeController extends ApiController
         return $this->showOne($shoe, 201);
     }
 
-
     public function show(Shoe $shoe)
     {
         return $this->showOne($shoe);
